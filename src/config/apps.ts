@@ -1,0 +1,81 @@
+/**
+ * Single source of truth for the hub.
+ * Tabs, home rows and routes are all generated from this array.
+ * To change a URL or add/remove a tab, edit only this file.
+ */
+export type Owner = 'mine' | 'partner'
+
+export interface AppConfig {
+  /** URL slug, used as the hash route (#/<id>) */
+  id: string
+  label: string
+  /** Compact label for the tab bar */
+  shortLabel: string
+  /** One plain sentence */
+  description: string
+  /** Deployed *.vercel.app URL of the child app */
+  url: string
+  owner: Owner
+  /** Hex colour used only as a small marker on the tab and home row */
+  accent: string
+}
+
+// TODO: replace every url with the real deployment URL.
+export const apps: AppConfig[] = [
+  {
+    id: 'new-vehicle-sales',
+    label: 'New Vehicle Sales',
+    shortLabel: 'Sales',
+    description: 'Follow new vehicle leads, inventory and sales from showroom to delivery.',
+    url: 'https://new-vehicle-sales.vercel.app/',
+    owner: 'partner',
+    accent: '#e4572e',
+  },
+  {
+    id: 'customer-services',
+    label: 'Customer Services',
+    shortLabel: 'Customer',
+    description: 'Handle owner enquiries, service bookings and follow-ups in one place.',
+    url: 'https://customer-service-topaz.vercel.app/',
+    owner: 'partner',
+    accent: '#2f80ed',
+  },
+  {
+    id: 'logistics',
+    label: 'Logistics',
+    shortLabel: 'Logistics',
+    description: 'Track vehicles and parts as they move through the supply chain.',
+    url: 'https://logisticsdashboard-ruddy.vercel.app/',
+    owner: 'partner',
+    accent: '#d99a00',
+  },
+  {
+    id: 'telematics',
+    label: 'Telematics',
+    shortLabel: 'Telematics',
+    description: 'Monitor connected vehicle data, location and driving behaviour.',
+    url: 'https://auc-telematics.vercel.app/',
+    owner: 'mine',
+    accent: '#14a38b',
+  },
+  {
+    id: 'warranty-field-services',
+    label: 'Warranty and Field Services',
+    shortLabel: 'Warranty',
+    description: 'Manage warranty claims and field technician visits.',
+    url: 'https://aucwarrantandfieldservices.vercel.app/overview',
+    owner: 'mine',
+    accent: '#a855c7',
+  },
+  {
+    id: 'it',
+    label: 'IT',
+    shortLabel: 'IT',
+    description: 'Oversee the systems, access and tooling behind the dealership network.',
+    url: 'https://auc-it.vercel.app/',
+    owner: 'mine',
+    accent: '#e0507a',
+  },
+]
+
+export const projectName = 'Automotive Use Cases'
