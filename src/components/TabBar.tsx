@@ -34,7 +34,7 @@ export default function TabBar({ active }: { active: string | null }) {
       role="tablist"
       aria-label="Automotive apps"
       onKeyDown={onKeyDown}
-      className="no-scrollbar flex h-full min-w-0 flex-1 overflow-x-auto"
+      className="no-scrollbar flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1"
     >
       {apps.map((app, i) => {
         const selected = app.id === active
@@ -50,15 +50,12 @@ export default function TabBar({ active }: { active: string | null }) {
             aria-controls={`panel-${app.id}`}
             aria-label={app.label}
             tabIndex={tabbable ? 0 : -1}
-            className={`relative flex h-full shrink-0 items-center gap-2 border-l border-line px-3.5 font-mono text-[13px] whitespace-nowrap hover:bg-surface sm:px-4 ${
-              selected ? 'bg-surface text-ink' : 'text-muted'
+            className={`relative flex h-9 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-medium whitespace-nowrap motion-safe:transition-colors ${
+              selected ? 'bg-white/12 text-nav-ink' : 'text-nav-muted hover:bg-nav-hover hover:text-nav-ink'
             }`}
-          >
-            <span aria-hidden className="size-2 shrink-0" style={{ background: app.accent }} />
+>
+            <span aria-hidden className="size-2 shrink-0 rounded-full" style={{ background: app.accent }} />
             {app.shortLabel}
-            {selected && (
-              <span aria-hidden className="absolute inset-x-0 bottom-0 h-0.5" style={{ background: app.accent }} />
-            )}
           </a>
         )
       })}

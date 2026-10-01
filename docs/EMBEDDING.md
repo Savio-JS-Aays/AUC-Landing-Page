@@ -18,7 +18,7 @@ response headers allow the parent site to frame it. The hub can't override this.
 ## Snippet for each child app
 
 Add this to the child app's `vercel.json` (merge into the existing file if there is one). Replace
-`<HUB-DOMAIN>` with the hub's domain, for example `automotive-use-cases.vercel.app`, with no trailing slash and no path.
+`<https://auc-landing-page.vercel.app/x>` with the hub's domain, for example `automotive-use-cases.vercel.app`, with no trailing slash and no path.
 
 ```json
 {

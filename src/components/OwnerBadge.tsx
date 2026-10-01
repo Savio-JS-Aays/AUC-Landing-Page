@@ -1,9 +1,12 @@
+import { Building2, Handshake } from 'lucide-react'
 import type { Owner } from '../config/apps'
 
 export default function OwnerBadge({ owner }: { owner: Owner }) {
+  const Icon = owner === 'mine' ? Building2 : Handshake
   return (
-    <span className="inline-block border border-current px-1.5 py-0.5 font-mono text-[11px] leading-none text-muted">
-      {owner === 'mine' ? 'Savio Joseph' : 'Fathima Farhaan'}
+    <span className="inline-flex items-center gap-1 rounded-full border border-line bg-bg px-2 py-0.5 text-xs font-medium text-muted">
+      <Icon aria-hidden className="size-3" />
+      {owner === 'mine' ? 'Built in-house' : 'Built by partner'}
     </span>
   )
 }

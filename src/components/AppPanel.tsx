@@ -35,7 +35,7 @@ export default function AppPanel({ app, visible }: { app: AppConfig; visible: bo
       {status === 'loading' && (
         <div
           role="status"
-          className="absolute inset-0 flex items-center justify-center bg-bg font-mono text-sm text-muted"
+          className="absolute inset-0 flex items-center justify-center bg-bg text-sm text-muted"
         >
           <span aria-hidden className="mr-3 size-2 animate-pulse" style={{ background: app.accent }} />
           Loading {app.label}…

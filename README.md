@@ -5,11 +5,11 @@ Stack: Vite, React, TypeScript, Tailwind CSS (raw, no UI library), lucide-react.
 
 ## Edit the apps
 
-Everything (tabs, home rows, routes) comes from [src/config/apps.ts](src/config/apps.ts). To change a URL, owner or
+Everything (tabs, home cards, routes) comes from [src/config/apps.ts](src/config/apps.ts). To change a URL, owner or
 accent, edit the entry there. To add or remove a tab, add or remove an entry. Order in the array is the tab order.
 
 Each app has: `id` (URL slug, `#/<id>`), `label`, `shortLabel`, `description`, `url`, `owner` (`"mine"` or `"partner"`)
-and `accent` (hex).
+and `accent` (hex) and `icon` (a lucide-react icon for the home card).
 
 URLs currently containing `REPLACE-` are placeholders.
 

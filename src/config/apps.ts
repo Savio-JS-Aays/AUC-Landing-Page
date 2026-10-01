@@ -1,8 +1,11 @@
 /**
  * Single source of truth for the hub.
- * Tabs, home rows and routes are all generated from this array.
+ * Tabs, home cards and routes are all generated from this array.
  * To change a URL or add/remove a tab, edit only this file.
  */
+import type { LucideIcon } from 'lucide-react'
+import { CarFront, Headset, RadioTower, ServerCog, Truck, Wrench } from 'lucide-react'
+
 export type Owner = 'mine' | 'partner'
 
 export interface AppConfig {
@@ -16,8 +19,10 @@ export interface AppConfig {
   /** Deployed *.vercel.app URL of the child app */
   url: string
   owner: Owner
-  /** Hex colour used only as a small marker on the tab and home row */
+  /** Hex colour used only as a small marker on the tab and home card */
   accent: string
+  /** lucide-react icon shown on the home card */
+  icon: LucideIcon
 }
 
 // TODO: replace every url with the real deployment URL.
@@ -30,6 +35,7 @@ export const apps: AppConfig[] = [
     url: 'https://new-vehicle-sales.vercel.app/',
     owner: 'partner',
     accent: '#e4572e',
+    icon: CarFront,
   },
   {
     id: 'customer-services',
@@ -39,6 +45,7 @@ export const apps: AppConfig[] = [
     url: 'https://customer-service-topaz.vercel.app/',
     owner: 'partner',
     accent: '#2f80ed',
+    icon: Headset,
   },
   {
     id: 'logistics',
@@ -48,6 +55,7 @@ export const apps: AppConfig[] = [
     url: 'https://logisticsdashboard-ruddy.vercel.app/',
     owner: 'partner',
     accent: '#d99a00',
+    icon: Truck,
   },
   {
     id: 'telematics',
@@ -57,6 +65,7 @@ export const apps: AppConfig[] = [
     url: 'https://auc-telematics.vercel.app/',
     owner: 'mine',
     accent: '#14a38b',
+    icon: RadioTower,
   },
   {
     id: 'warranty-field-services',
@@ -66,6 +75,7 @@ export const apps: AppConfig[] = [
     url: 'https://aucwarrantandfieldservices.vercel.app/overview',
     owner: 'mine',
     accent: '#a855c7',
+    icon: Wrench,
   },
   {
     id: 'it',
@@ -75,6 +85,7 @@ export const apps: AppConfig[] = [
     url: 'https://auc-it.vercel.app/',
     owner: 'mine',
     accent: '#e0507a',
+    icon: ServerCog,
   },
 ]
 
