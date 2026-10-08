@@ -31,3 +31,5 @@ npm run preview  # serves the production build
    framing by it.
 
 If the apps don't show in their tabs, see the embedding doc. It is almost always a framing header on the child app.
+
+If a deploy fails on Vercel, run `npm run build` locally first. It runs `tsc -b`, so type errors fail the build there too.
