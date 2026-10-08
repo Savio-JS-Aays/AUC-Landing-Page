@@ -6,7 +6,7 @@ export default function OwnerBadge({ owner }: { owner: Owner }) {
   return (
     <span className="inline-flex items-center gap-1 rounded-full border border-line bg-bg px-2 py-0.5 text-xs font-medium text-muted">
       <Icon aria-hidden className="size-3" />
-      {owner === 'mine' ? 'Built in-house' : 'Built by partner'}
+      {owner === 'Savio' ? 'Savio' : 'Fathima'}
     </span>
   )
 }
